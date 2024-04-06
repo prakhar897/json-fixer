@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Blog</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
+	</head>
+	<body class="bg-gray-100">
+		<header class="bg-gray-800 py-4">
+			<nav class="container mx-auto flex justify-between items-center">
+				<a href="/" class="text-white font-bold text-xl">JSON Parser</a>
+				<ul class="flex space-x-4">
+					<li>
+						<a href="/blog" class="text-white hover:text-gray-400"
+							>Blog</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container mx-auto py-8">
+			<h1 class="text-2xl font-bold mb-4 text-center">Blog</h1>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+				<div class="bg-white p-4 rounded shadow">
+					<h2 class="text-lg font-bold mb-2">
+						<a href="/blog/sample-blog" class="hover:text-gray-700"
+							>Sample Blog Post</a
+						>
+					</h2>
+					<p class="text-gray-600 text-sm mb-2">April 5, 2024</p>
+					<p class="text-gray-700">
+						This is a sample blog post. Click the link to read the
+						full article.
+					</p>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
