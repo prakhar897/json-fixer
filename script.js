@@ -11,9 +11,12 @@ const sampleData = `{
   "hobbies": ["reading", "hiking", "coding"]
 }`;
 
+const url = `http://localhost:3000/check`;
+//const url = `https://json-fixer.onrender.com/check`;
+
 parseBtn.addEventListener("click", () => {
 	const data = inputText.value;
-	fetch("https://json-fixer.onrender.com/check", {
+	fetch(url, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
