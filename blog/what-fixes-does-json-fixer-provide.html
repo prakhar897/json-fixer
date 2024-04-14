@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="JSON Fixer is a tool to fix broken JSON data."
+		/>
+		<title>JSON Fixer</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
+		<link
+			rel="icon"
+			href="https://raw.githubusercontent.com/prakhar897/json-fixer/main/icon.png"
+			type="image/x-icon"
+		/>
+
+		<meta property="og:title" content="JSON Fixer" />
+		<meta
+			property="og:description"
+			content="JSON Fixer is a tool to fix broken JSON data."
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://jsonfixer.com" />
+		<meta
+			property="og:image"
+			content="https://raw.githubusercontent.com/prakhar897/json-fixer/main/icon.png"
+		/>
+
+		<link rel="canonical" href="https://jsonfixer.com" />
+	</head>
+	<body class="bg-gray-100">
+		<header class="bg-gray-800 py-4">
+			<nav class="container mx-auto flex justify-between items-center">
+				<a href="/" class="text-white font-bold text-xl">JSON Fixer</a>
+				<ul class="flex space-x-4">
+					<li>
+						<a href="/blog" class="text-white hover:text-gray-400"
+							>Blog</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://forms.gle/AF7estQXmY82twRWA"
+							target="_blank"
+							class="text-white hover:text-gray-400"
+							>API Access</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container mx-auto py-8">
+			<h1 class="text-3xl font-bold mb-4">
+				What fixes does JSON Fixer provide?
+			</h1>
+			<p class="text-gray-700 mb-4">
+				The JSON Fixer tool can fix various issues with JSON data,
+				including:
+			</p>
+			<ul class="list-disc pl-5 text-gray-700">
+				<li>
+					<strong>Missing quotes around keys:</strong> Consider a JSON
+					object where you forget to add quotes around a key name. For
+					example, this is invalid: <code>{ name: "John" }</code>.
+					JSON Fixer can add the missing quotes and make it valid:
+					<code>{ "name": "John" }</code>.
+				</li>
+				<li>
+					<strong>Missing escape characters:</strong> Escape
+					characters are used to represent special characters within
+					strings in JSON. For instance, if you have a quote within a
+					string, you need to escape it with a backslash (\). JSON
+					Fixer can add missing escape characters to ensure your JSON
+					is valid. Example:
+					<code>{ "text": "It's raining" }</code> becomes
+					<code>{ "text": "It\'s raining" }</code>.
+				</li>
+				<li>
+					<strong>Missing commas:</strong> Commas are required to
+					separate key-value pairs in JSON objects. JSON Fixer can
+					insert missing commas to fix invalid JSON. Example:
+					<code>{ "name": "John" "age": 30 }</code> becomes
+					<code>{ "name": "John", "age": 30 }</code>.
+				</li>
+				<li>
+					<strong>Add missing closing brackets:</strong> JSON data
+					requires proper opening and closing curly braces ({ and }).
+					JSON Fixer can insert missing closing brackets at the end to
+					make your JSON valid.
+				</li>
+				<li>
+					<strong>Repair truncated JSON:</strong> Incomplete or
+					abruptly terminated JSON data can be fixed by JSON Fixer.
+				</li>
+			</ul>
+		</main>
+	</body>
+</html>
