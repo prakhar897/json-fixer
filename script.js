@@ -3,8 +3,8 @@ const outputText = document.getElementById("output-text");
 const parseBtn = document.getElementById("parse-btn");
 const sampleBtn = document.getElementById("sample-btn");
 const copyBtn = document.getElementById("copy-btn");
-const url = `http://localhost:3000`;
-//const url = `https://json-fixer.onrender.com`;
+//const url = `http://localhost:3000`;
+const url = `https://json-fixer.onrender.com`;
 
 parseBtn.addEventListener("click", async () => {
 	const data = inputText.value;
