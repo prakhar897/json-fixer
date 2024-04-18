@@ -3,15 +3,27 @@ const outputText = document.getElementById("output-text");
 const parseBtn = document.getElementById("parse-btn");
 const sampleBtn = document.getElementById("sample-btn");
 const copyBtn = document.getElementById("copy-btn");
-const url = `http://localhost:3000`;
-//const url = `https://json-fixer.onrender.com`;
+//const url = `http://localhost:3000`;
+const url = `https://json-fixer.onrender.com`;
 
 parseBtn.addEventListener("click", async () => {
 	const data = inputText.value;
+
+	// Check empty input
 	if (data.length === 0) {
 		outputText.value = `Please enter some JSON.`;
 		return;
 	}
+
+	// Check payload size
+	const payloadSize = new Blob([data]).size;
+	const maxPayloadSize = 100 * 1024; // 100 KB
+
+	if (payloadSize > maxPayloadSize) {
+		outputText.value = `Payload Size is too large. Consider using API access.`;
+		return;
+	}
+
 	try {
 		const response = await fetch(`${url}/check`, {
 			method: "POST",
@@ -23,11 +35,7 @@ parseBtn.addEventListener("click", async () => {
 		const result = await response.json();
 		outputText.value = JSON.stringify(result, null, 4);
 	} catch (error) {
-		if (error.message === "Failed to fetch") {
-			outputText.value = `Payload Size is too large. Consider using API access.`;
-		} else {
-			outputText.value = `Error: ${error.message}`;
-		}
+		outputText.value = `Error: ${error.message}`;
 	}
 });
 
