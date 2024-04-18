@@ -3,8 +3,8 @@ const outputText = document.getElementById("output-text");
 const parseBtn = document.getElementById("parse-btn");
 const sampleBtn = document.getElementById("sample-btn");
 const copyBtn = document.getElementById("copy-btn");
-//const url = `http://localhost:3000`;
-const url = `https://json-fixer.onrender.com`;
+const url = `http://localhost:3000`;
+//const url = `https://json-fixer.onrender.com`;
 
 parseBtn.addEventListener("click", async () => {
 	const data = inputText.value;
@@ -17,7 +17,7 @@ parseBtn.addEventListener("click", async () => {
 
 	// Check payload size
 	const payloadSize = new Blob([data]).size;
-	const maxPayloadSize = 100 * 1024; // 100 KB
+	const maxPayloadSize = 1024 * 1024; // 1MB
 
 	if (payloadSize > maxPayloadSize) {
 		outputText.value = `Payload Size is too large. Consider using API access.`;
