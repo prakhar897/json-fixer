@@ -19,7 +19,11 @@ parseBtn.addEventListener("click", async () => {
 		const result = await response.json();
 		outputText.value = JSON.stringify(result, null, 4);
 	} catch (error) {
-		outputText.value = `Error: ${error.message}`;
+		if (error.message === "Failed to fetch") {
+			outputText.value = `Payload Size is too large. Consider using API access.`;
+		} else {
+			outputText.value = `Error: ${error.message}`;
+		}
 	}
 });
 
