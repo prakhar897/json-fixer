@@ -32,7 +32,22 @@ parseBtn.addEventListener("click", async () => {
 			},
 			body: JSON.stringify({ payload: data }),
 		});
+
 		const result = await response.json();
+		const aboveFlashMessage = document.getElementById(
+			"above-flash-message"
+		);
+
+		if (
+			result &&
+			result[0] ===
+				`Sorry, I couldn't parse this JSON. I'll try to fix this soon. Please let me know if this error persists.`
+		) {
+			aboveFlashMessage.innerHTML = ` Our Engine Couldn't parse it  :( Click <a href="https://forms.gle/AF7estQXmY82twRWA" target="_blank" class="text-blue-500 underline">here</a> to get access to our AI Parser.`;
+			("The engine parser couldn't parse it, please upgrade to AI parser");
+		} else {
+			aboveFlashMessage.innerHTML = "";
+		}
 		outputText.value = JSON.stringify(result, null, 4);
 	} catch (error) {
 		outputText.value = `Error: ${error.message}`;
